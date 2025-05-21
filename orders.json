@@ -1,0 +1,721 @@
+[
+    {
+        "user_name": "DAISY PRIYA",
+        "phone_number": "08105476094",
+        "email": "daisyuidc@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/red%20bubb.webp",
+                "name": "Jumbo BubbleScent: Raspberry",
+                "price": 500,
+                "quantity": 1
+            }
+        ],
+        "total_price": 500,
+        "payment_mode": "cod",
+        "order_date": "2025-05-14T06:16:44.752Z"
+    },
+    {
+        "user_name": "DAISY PRIYA",
+        "phone_number": "08105476094",
+        "email": "daisyuidc@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [],
+        "total_price": 0,
+        "payment_mode": "cod",
+        "order_date": "2025-05-14T06:29:30.159Z"
+    },
+    {
+        "user_name": "DAISY PRIYA",
+        "phone_number": "08105476094",
+        "email": "daisyuidc@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/red%20bubb.webp",
+                "name": "Jumbo BubbleScent: Raspberry",
+                "price": 500,
+                "quantity": 1
+            }
+        ],
+        "total_price": 500,
+        "payment_mode": "cod",
+        "order_date": "2025-05-14T06:33:11.143Z"
+    },
+    {
+        "user_name": "DAISY PRIYA",
+        "phone_number": "08105476094",
+        "email": "daisyuidc@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Thank You Candles (White (Original), Small (5x5), Lavender Fields)",
+                "color": "White (Original)",
+                "size": "Small (5x5)",
+                "scent": "Lavender Fields",
+                "customText": "Yo!",
+                "price": 2300,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c3.webp",
+                "quantity": 1
+            },
+            {
+                "name": "Beige Beauty Candle (Beige (Original), Small (5x5), Lavender Fields)",
+                "color": "Beige (Original)",
+                "size": "Small (5x5)",
+                "scent": "Lavender Fields",
+                "customText": "Yhooooo",
+                "price": 800,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c2.webp",
+                "quantity": 1
+            }
+        ],
+        "total_price": 3100,
+        "payment_mode": "cod",
+        "order_date": "2025-05-15T07:33:13.733Z"
+    },
+    {
+        "user_name": "Supritha",
+        "phone_number": "9456321897",
+        "email": "supritha@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [],
+        "total_price": 0,
+        "payment_mode": "cod",
+        "order_date": "2025-05-15T08:17:43.939Z"
+    },
+    {
+        "user_name": "Supritha",
+        "phone_number": "9456321897",
+        "email": "supritha@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [],
+        "total_price": 0,
+        "payment_mode": "cod",
+        "order_date": "2025-05-15T08:23:10.507Z"
+    },
+    {
+        "user_name": "Supritha",
+        "phone_number": "9456321897",
+        "email": "supritha@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Custom Text Candle (White (Original), Small (5x5), Lavender Fields)",
+                "color": "White (Original)",
+                "size": "Small (5x5)",
+                "scent": "Lavender Fields",
+                "customText": "dsagb",
+                "price": 800,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c1.avif",
+                "quantity": 1
+            }
+        ],
+        "total_price": 800,
+        "payment_mode": "cod",
+        "order_date": "2025-05-15T08:24:43.714Z"
+    },
+    {
+        "user_name": "Supritha",
+        "phone_number": "9456321897",
+        "email": "supritha@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Custom Text Candle (White (Original), Small (5x5), Lavender Fields)",
+                "color": "White (Original)",
+                "size": "Small (5x5)",
+                "scent": "Lavender Fields",
+                "customText": "dsagb",
+                "price": 800,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c1.avif",
+                "quantity": 1
+            }
+        ],
+        "total_price": 800,
+        "payment_mode": "cod",
+        "order_date": "2025-05-15T08:25:27.306Z"
+    },
+    {
+        "user_name": "Anna",
+        "phone_number": "9456321897",
+        "email": "anna@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Custom Text Candle (White (Original), Small (5x5), Lavender Fields)",
+                "price": 800,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c1.avif",
+                "scent": "Lavender Fields",
+                "color": "White (Original)",
+                "size": "Small (5x5)",
+                "customText": "dbfxhndf bdfdfdfdfbh rtgh e"
+            }
+        ],
+        "total_price": 800,
+        "payment_mode": "cod",
+        "order_date": "2025-05-15T08:45:07.098Z"
+    },
+    {
+        "user_name": "Supritha",
+        "phone_number": "09456321897",
+        "email": "supritha@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Custom Text Candle (White (Original), Small (5x5), Lavender Fields)",
+                "price": 800,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c1.avif",
+                "scent": "Lavender Fields",
+                "color": "White (Original)",
+                "size": "Small (5x5)",
+                "customText": "fesdg"
+            }
+        ],
+        "total_price": 800,
+        "payment_mode": "cod",
+        "order_date": "2025-05-15T08:49:33.185Z"
+    },
+    {
+        "user_name": "Supritha",
+        "phone_number": "09456321897",
+        "email": "supritha@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Custom Text Candle (White (Original), Small (5x5), Lavender Fields)",
+                "price": 800,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c1.avif",
+                "scent": "Lavender Fields",
+                "color": "White (Original)",
+                "size": "Small (5x5)",
+                "customText": "ascvxdasdcv"
+            }
+        ],
+        "total_price": 800,
+        "payment_mode": "cod",
+        "order_date": "2025-05-15T09:00:11.254Z"
+    },
+    {
+        "user_name": "Supritha",
+        "phone_number": "09456321897",
+        "email": "supritha@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Custom Text Candle (White (Original), Small (5x5), Lavender Fields)",
+                "price": 800,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c1.avif",
+                "scent": "Lavender Fields",
+                "color": "White (Original)",
+                "size": "Small (5x5)",
+                "customText": "ascvxdasdcv"
+            }
+        ],
+        "total_price": 800,
+        "payment_mode": "cod",
+        "order_date": "2025-05-15T09:06:36.542Z"
+    },
+    {
+        "user_name": "Supritha",
+        "phone_number": "09456321897",
+        "email": "supritha@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Custom Text Candle (White (Original), Small (5x5), Lavender Fields)",
+                "price": 800,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c1.avif",
+                "scent": "Lavender Fields",
+                "color": "White (Original)",
+                "size": "Small (5x5)",
+                "customText": "Yo!"
+            }
+        ],
+        "total_price": 800,
+        "payment_mode": "cod",
+        "order_date": "2025-05-15T09:14:07.718Z"
+    },
+    {
+        "user_name": "Supritha",
+        "phone_number": "09456321897",
+        "email": "supritha@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Custom Text Candle (White (Original), Small (5x5), Lavender Fields)",
+                "price": 800,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c1.avif",
+                "scent": "Lavender Fields",
+                "color": "White (Original)",
+                "size": "Small (5x5)",
+                "customText": "Yo!"
+            }
+        ],
+        "total_price": 800,
+        "payment_mode": "cod",
+        "order_date": "2025-05-15T09:17:49.005Z"
+    },
+    {
+        "user_name": "Supritha",
+        "phone_number": "09456321897",
+        "email": "supritha@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Custom Text Candle (White (Original), Small (5x5), Lavender Fields)",
+                "price": 800,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c1.avif",
+                "scent": "Lavender Fields",
+                "color": "White (Original)",
+                "size": "Small (5x5)",
+                "customText": "Yo!"
+            }
+        ],
+        "total_price": 800,
+        "payment_mode": "cod",
+        "order_date": "2025-05-15T09:19:00.581Z"
+    },
+    {
+        "user_name": "Supritha",
+        "phone_number": "09456321897",
+        "email": "supritha@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Anniversary Candle (Light Blue, Mini (3x3), Fireside Smoke)",
+                "price": 6150,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c5.webp",
+                "scent": "Fireside Smoke",
+                "color": "Light Blue",
+                "size": "Mini (3x3)",
+                "customText": "Hephzi"
+            },
+            {
+                "name": "Custom Text Candle (Yellow, Medium (7x7), Mango & Papaya)",
+                "price": 750,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c1.avif",
+                "scent": "Mango & Papaya",
+                "color": "Yellow",
+                "size": "Medium (7x7)"
+            },
+            {
+                "name": "Corquette Gurly Candles (Beige, Vanilla Bean, Bow: Navy, Brooch: Silver)",
+                "price": 4200,
+                "quantity": 3,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c9.webp",
+                "scent": "Vanilla Bean",
+                "color": "Beige",
+                "customText": "hiii"
+            },
+            {
+                "name": "Custom Message Candle (Yellow, Medium (7x7), Vanilla Bean)",
+                "price": 6200,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c8.webp",
+                "scent": "Vanilla Bean",
+                "color": "Yellow",
+                "size": "Medium (7x7)",
+                "customText": "nghf"
+            }
+        ],
+        "total_price": 25700,
+        "payment_mode": "cod",
+        "order_date": "2025-05-20T05:47:59.751Z"
+    },
+    {
+        "user_name": "Supritha",
+        "phone_number": "09456321897",
+        "email": "supritha@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Anniversary Candle (Light Blue, Mini (3x3), Fireside Smoke)",
+                "price": 6150,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c5.webp",
+                "scent": "Fireside Smoke",
+                "color": "Light Blue",
+                "size": "Mini (3x3)",
+                "customText": "Hephzi"
+            },
+            {
+                "name": "Custom Text Candle (Yellow, Medium (7x7), Mango & Papaya)",
+                "price": 750,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c1.avif",
+                "scent": "Mango & Papaya",
+                "color": "Yellow",
+                "size": "Medium (7x7)"
+            },
+            {
+                "name": "Corquette Gurly Candles (Beige, Vanilla Bean, Bow: Navy, Brooch: Silver)",
+                "price": 4200,
+                "quantity": 3,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c9.webp",
+                "scent": "Vanilla Bean",
+                "color": "Beige",
+                "customText": "hiii"
+            },
+            {
+                "name": "Custom Message Candle (Yellow, Medium (7x7), Vanilla Bean)",
+                "price": 6200,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c8.webp",
+                "scent": "Vanilla Bean",
+                "color": "Yellow",
+                "size": "Medium (7x7)",
+                "customText": "nghf"
+            }
+        ],
+        "total_price": 25700,
+        "payment_mode": "cod",
+        "order_date": "2025-05-20T05:50:23.590Z"
+    },
+    {
+        "user_name": "Supritha",
+        "phone_number": "09456321897",
+        "email": "supritha@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Custom Text Candle (Yellow, Medium (7x7), Mango & Papaya)",
+                "price": 750,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c1.avif",
+                "scent": "Mango & Papaya",
+                "color": "Yellow",
+                "size": "Medium (7x7)"
+            },
+            {
+                "name": "Corquette Gurly Candles (Beige, Vanilla Bean, Bow: Navy, Brooch: Silver)",
+                "price": 4200,
+                "quantity": 3,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c9.webp",
+                "scent": "Vanilla Bean",
+                "color": "Beige",
+                "customText": "hiii"
+            },
+            {
+                "name": "Custom Message Candle (Yellow, Medium (7x7), Vanilla Bean)",
+                "price": 6200,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c8.webp",
+                "scent": "Vanilla Bean",
+                "color": "Yellow",
+                "size": "Medium (7x7)",
+                "customText": "nghf"
+            }
+        ],
+        "total_price": 19550,
+        "payment_mode": "cod",
+        "order_date": "2025-05-20T05:51:13.214Z"
+    },
+    {
+        "user_name": "Supritha",
+        "phone_number": "09456321897",
+        "email": "supritha@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Anniversary Candle (White (Original), Small (5x5), Lavender Fields)",
+                "price": 700,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c5.webp",
+                "scent": "Lavender Fields",
+                "color": "White (Original)",
+                "size": "Small (5x5)"
+            }
+        ],
+        "total_price": 700,
+        "payment_mode": "cod",
+        "order_date": "2025-05-20T05:52:03.678Z"
+    },
+    {
+        "user_name": "Supritha",
+        "phone_number": "09456321897",
+        "email": "supritha@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Beige Beauty Candle (Cream, Large (10x10), Salted Caramel)",
+                "price": 1350,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c2.webp",
+                "scent": "Salted Caramel",
+                "color": "Cream",
+                "size": "Large (10x10)",
+                "customText": "gfgvt"
+            },
+            {
+                "name": "Corquette Gurly Candles (Cream, Apple Cinnamon, Bow: Silver, Brooch: Gold)",
+                "price": 2800,
+                "quantity": 2,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c9.webp",
+                "scent": "Apple Cinnamon",
+                "color": "Cream",
+                "customText": "hiii"
+            }
+        ],
+        "total_price": 6950,
+        "payment_mode": "cod",
+        "order_date": "2025-05-20T06:14:46.758Z"
+    },
+    {
+        "user_name": "prakash",
+        "phone_number": "7685655378",
+        "email": "prakash@gmail.com",
+        "address": "street, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Beige Beauty Candle (Cream, XL (15x15), Apple Cinnamon)",
+                "price": 1550,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c2.webp",
+                "scent": "Apple Cinnamon",
+                "color": "Cream",
+                "size": "XL (15x15)",
+                "customText": "happy birthday"
+            },
+            {
+                "name": "Corquette Gurly Candles (Pink, Citrus Zest (Orange, Lemon, Lime), Bow: Blue, Brooch: Silver)",
+                "price": 11200,
+                "quantity": 8,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c9.webp",
+                "scent": "Citrus Zest (Orange, Lemon, Lime)",
+                "color": "Pink",
+                "customText": "hiii "
+            }
+        ],
+        "total_price": 91150,
+        "payment_mode": "upi",
+        "order_date": "2025-05-20T06:38:42.884Z"
+    },
+    {
+        "user_name": "prakash",
+        "phone_number": "7685655378",
+        "email": "prakash@gmail.com",
+        "address": "street, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Wooden Fall BowlScent: Bamboo Fresh",
+                "price": 1200,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/fall6.jpg"
+            }
+        ],
+        "total_price": 1200,
+        "payment_mode": "debit-card",
+        "order_date": "2025-05-20T07:11:44.682Z"
+    },
+    {
+        "user_name": "prakash",
+        "phone_number": "7685655378",
+        "email": "prakash@gmail.com",
+        "address": "street, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Beige Beauty Candle (Beige (Original), Small (5x5), Lavender Fields)",
+                "price": 800,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/c2.webp",
+                "scent": "Lavender Fields",
+                "color": "Beige (Original)",
+                "size": "Small (5x5)",
+                "customText": "YO!"
+            }
+        ],
+        "total_price": 800,
+        "payment_mode": "debit-card",
+        "order_date": "2025-05-20T07:14:04.226Z"
+    },
+    {
+        "user_name": "dais",
+        "phone_number": "01234567890",
+        "email": "dais@gmail.com",
+        "address": "street, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Jumbo BubbleScent: Raspberry",
+                "price": 500,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/red%20bubb.webp"
+            }
+        ],
+        "total_price": 500,
+        "payment_mode": "cod",
+        "order_date": "2025-05-20T07:15:09.762Z"
+    },
+    {
+        "user_name": "dais",
+        "phone_number": "01234567890",
+        "email": "dais@gmail.com",
+        "address": "street, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Jumbo BubbleScent: Raspberry",
+                "price": 500,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/red%20bubb.webp"
+            }
+        ],
+        "total_price": 500,
+        "payment_mode": "cod",
+        "order_date": "2025-05-20T07:17:08.506Z"
+    },
+    {
+        "user_name": "DAISY PRIYA",
+        "phone_number": "08105476094",
+        "email": "daisyuidc@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Wooden Fall BowlScent: Bamboo Fresh",
+                "price": 1200,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/fall6.jpg"
+            }
+        ],
+        "total_price": 1200,
+        "payment_mode": "cod",
+        "order_date": "2025-05-20T07:20:47.170Z"
+    },
+    {
+        "user_name": "Anna",
+        "phone_number": "9456321897",
+        "email": "anna@gmail.com",
+        "address": "street, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Wooden Fall BowlScent: Bamboo Fresh",
+                "price": 1200,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/fall6.jpg"
+            }
+        ],
+        "total_price": 1200,
+        "payment_mode": "cod",
+        "order_date": "2025-05-20T07:21:32.498Z"
+    },
+    {
+        "user_name": "dais",
+        "phone_number": "01234567890",
+        "email": "dais@gmail.com",
+        "address": "street, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Jumbo BubbleScent: Raspberry",
+                "price": 500,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/red%20bubb.webp"
+            }
+        ],
+        "total_price": 500,
+        "payment_mode": "cod",
+        "order_date": "2025-05-20T07:22:27.154Z"
+    },
+    {
+        "user_name": "DAISY PRIYA",
+        "phone_number": "08105476094",
+        "email": "daisyuidc@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [],
+        "total_price": 0,
+        "payment_mode": "debit-card",
+        "order_date": "2025-05-20T07:24:16.042Z"
+    },
+    {
+        "user_name": "DAISY PRIYA",
+        "phone_number": "08105476094",
+        "email": "daisyuidc@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Jumbo BubbleScent: Raspberry",
+                "price": 500,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/red%20bubb.webp"
+            }
+        ],
+        "total_price": 500,
+        "payment_mode": "cod",
+        "order_date": "2025-05-20T07:32:36.898Z"
+    },
+    {
+        "user_name": "DAISY PRIYA",
+        "phone_number": "08105476094",
+        "email": "daisyuidc@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Pack of Six: TeddyScent: Warm Hug",
+                "price": 900,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/teddy2.jpg"
+            }
+        ],
+        "total_price": 900,
+        "payment_mode": "cod",
+        "order_date": "2025-05-20T07:33:55.521Z"
+    },
+    {
+        "user_name": "DAISY PRIYA",
+        "phone_number": "08105476094",
+        "email": "daisyuidc@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Glass Jar CandleScent: Fresh Breeze",
+                "price": 470,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/jar2.webp"
+            }
+        ],
+        "total_price": 470,
+        "payment_mode": "cod",
+        "order_date": "2025-05-20T07:34:45.233Z"
+    },
+    {
+        "user_name": "DAISY PRIYA",
+        "phone_number": "08105476094",
+        "email": "daisyuidc@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Glass Jar CandleScent: Fresh Breeze",
+                "price": 470,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/jar2.webp"
+            }
+        ],
+        "total_price": 470,
+        "payment_mode": "debit-card",
+        "order_date": "2025-05-20T07:35:47.129Z"
+    },
+    {
+        "user_name": "DAISY PRIYA",
+        "phone_number": "08105476094",
+        "email": "daisyuidc@gmail.com",
+        "address": "#45, maple meadows  phase 1 , chikkagubbi, Bangalore, Karnataka, 560077, India",
+        "products": [
+            {
+                "name": "Pack of Six: TeddyScent: Warm Hug",
+                "price": 900,
+                "quantity": 1,
+                "image": "http:\/\/localhost\/Daisy-HTML\/images\/teddy2.jpg"
+            }
+        ],
+        "total_price": 900,
+        "payment_mode": "debit-card",
+        "order_date": "2025-05-20T07:38:10.993Z"
+    }
+]
