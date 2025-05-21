@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wooden Fall Bowl</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .product-page {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-gallery {
+      flex: 1;
+      text-align: center;
+    }
+
+    .main-image {
+      width: 300px;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    .product-details {
+      flex: 2;
+    }
+
+    .product-details h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .scent {
+      font-style: italic;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 24px;
+      color: #000;
+      margin: 10px 0;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      color: gray;
+      margin-left: 10px;
+    }
+
+    .discount {
+      color: green;
+      margin-left: 10px;
+    }
+
+    .quantity-add {
+      margin: 20px 0;
+      display: flex;
+      gap: 10px;
+    }
+
+    .quantity {
+      width: 60px;
+      padding: 8px;
+    }
+
+    .btn {
+      background-color: #d62828;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .btn.buy-now {
+      background-color: #007bff;
+    }
+
+    .description {
+      margin-top: 30px;
+    }
+
+    .description ul {
+      padding-left: 20px;
+    }
+
+    .reviews {
+      margin-top: 0; /* Remove the gap */
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .review {
+      margin-bottom: 20px;
+    }
+
+    .review h4 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .review p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .review .rating {
+      color: #f39c12;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="product-page">
+      <div class="image-gallery">
+        <img src="../images/fall6.jpg" alt="Wooden Fall Bowl" class="main-image" id="product-image">
+      </div>
+      <div class="product-details">
+        <h1 id="product-name">Wooden Fall Bowl</h1>
+        <p class="scent" id="product-scent">Scent: Bamboo Fresh</p>
+        <p class="price">₹<span id="price">1200</span> <span class="old-price" id="old-price">₹1480</span> <span class="discount" id="discount">19% off</span></p>
+        <div class="quantity-add">
+          <input type="number" value="1" min="1" class="quantity" id="quantity" oninput="updatePrice()">
+          <button class="btn" onclick="addToCart()">Add to Cart</button>
+          <button class="btn buy-now" onclick="buyNow()">Buy Now</button>
+        </div>
+        <div class="description">
+          <p id="product-description">Experience the freshness of bamboo in a beautifully crafted wooden fall bowl. A unique blend of nature and luxury in one elegant candle.</p>
+          <ul>
+            <li>All-natural soy wax</li>
+            <li>Hand-poured in small batches</li>
+            <li>Eco-friendly wooden wick</li>
+            <li>Approx. 40 hrs burn time</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews">
+      <h2>Customer Reviews</h2>
+      <div class="review">
+        <h4>John Doe <span class="rating">★★★★★</span></h4>
+        <p>"Absolutely love this candle! The scent is so refreshing and the design is beautiful."</p>
+      </div>
+      <div class="review">
+        <h4>Jane Smith <span class="rating">★★★★☆</span></h4>
+        <p>"Great product! The burn time is impressive, but I wish the scent was a bit stronger."</p>
+      </div>
+      <div class="review">
+        <h4>Emily Johnson <span class="rating">★★★★★</span></h4>
+        <p>"Perfect gift for my friends. They all loved it. Highly recommend!"</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Fetch product details dynamically
+    fetch('../php/fetch_product.php')
+      .then(response => response.json())
+      .then(product => {
+        if (product.error) {
+          console.error(product.error);
+          return;
+        }
+        // Populate product details dynamically
+        document.getElementById('product-name').textContent = product.name;
+        document.getElementById('product-scent').textContent = `Scent: ${product.scent}`;
+        document.getElementById('price').textContent = product.price;
+        document.getElementById('old-price').textContent = `₹${product.old_price}`;
+        document.getElementById('discount').textContent = `${product.discount_percentage}% off`;
+        document.getElementById('product-image').src = product.image_url;
+        document.getElementById('product-description').textContent = product.description;
+      })
+      .catch(error => console.error('Error fetching product:', error));
+
+    function updatePrice() {
+      const basePrice = parseFloat(document.getElementById('price').textContent);
+      const quantity = document.getElementById('quantity').value;
+      const totalPrice = basePrice * quantity;
+      document.getElementById('price').textContent = totalPrice.toFixed(2);
+    }
+
+    function addToCart() {
+      const product = {
+        name: document.getElementById('product-name').textContent,
+        scent: document.getElementById('product-scent').textContent.replace('Scent: ', ''),
+        price: parseFloat(document.getElementById('price').textContent),
+        quantity: parseInt(document.getElementById('quantity').value),
+        image: document.getElementById('product-image').src
+      };
+
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existingProduct = cart.find(item => item.name === product.name);
+
+      if (existingProduct) {
+        existingProduct.quantity += product.quantity;
+      } else {
+        cart.push(product);
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${product.name} has been added to your cart!`);
+    }
+
+    function buyNow() {
+      addToCart();
+      window.location.href = "cart.html";
+    }
+  </script>
+</body>
+</html>

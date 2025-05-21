@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | The Chosen Lamb</title>
+  <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="login-box">
+    <div class="login-image"></div>
+    <div class="login-form">
+      <h1 class="brand-name">The Chosen Lamb</h1> <!-- Brand name in cursive -->
+      <h2>Log In</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email <span class="required-star">*</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password <span class="required-star">*</span></label>
+          <input type="password" id="password" name="password" required>
+        </div>
+        <input type="submit" value="Log In">
+      </form>
+      <div id="loginMessage" style="color:red;margin-top:10px;"></div>
+      <div class="register-link">
+        Don't have an account? <a href="../html/register.html">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>  
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const messageDiv = document.getElementById('loginMessage');
+  messageDiv.textContent = '';
+
+  fetch('../php/backend.php', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: `email=${encodeURIComponent(email)}&login_password=${encodeURIComponent(password)}`
+  })
+  .then(response => response.text())
+  .then(data => {
+    if (data.trim().startsWith('success')) {
+      // Save user info to localStorage for acc.html
+      localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('userInfo', JSON.stringify({
+        name: email.split('@')[0], // Placeholder, ideally get from backend
+        email: email
+      }));
+      // Clear all cart containers for this user and any generic cart
+      localStorage.removeItem('cart');
+      localStorage.removeItem('cart_' + email);
+      window.location.href = 'home.html';
+    } else {
+      messageDiv.textContent = data;
+    }
+  })
+  .catch(() => {
+    messageDiv.textContent = 'An error occurred. Please try again.';
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('../images/background.jpg') center/cover no-repeat; /* Add your background image path */
+    height: 100vh; /* Ensure the background covers the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.brand-name {
+    font-family: 'Brush Script MT', cursive; /* Cursive font */
+    font-size: 2rem; /* Adjust font size */
+    color: #b66a3c; /* Brand color */
+    text-align: center; /* Center the text */
+    margin-bottom: 10px; /* Add spacing below the brand name */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9); /* Add a semi-transparent background for better readability */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 800px;
+    max-width: 95%;
+    overflow: hidden;
+}
+
+.login-box {
+    display: flex;
+    width: 100%;
+}
+
+.login-image {
+    width: 50%;
+    background: url('../images/loginimg.jpg') center/cover no-repeat; /* Replace with your image path */
+}
+
+.login-form {
+    padding: 40px;
+    width: 50%;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center; /* Center the heading */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.required-star {
+    color: red;
+    margin-left: 3px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #444;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #222;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register-link a {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

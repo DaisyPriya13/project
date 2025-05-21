@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Beige Beauty Candle</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <style>
+        .customize-container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px #eee;
+            padding: 32px 24px;
+        }
+        .customize-container h2 {
+            margin-bottom: 24px;
+        }
+        .customize-container label {
+            display: block;
+            margin: 18px 0 6px 0;
+            font-weight: bold;
+        }
+        .customize-container input[type="text"],
+        .customize-container select,
+        .customize-container input[type="number"],
+        .customize-container textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .customize-container textarea {
+            min-height: 60px;
+            resize: vertical;
+        }
+        .customize-container .preview {
+            margin: 24px 0;
+            text-align: center;
+        }
+        .customize-container button {
+            background: #400;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 28px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .customize-container button:hover {
+            background: #300;
+        }
+        .price-label {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 18px;
+            color: #400;
+            text-align: right;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="customize-container">
+        <h2>Customize Beige Beauty Candle</h2>
+        <form id="customForm" oninput="updatePrice()">
+            <label for="color">Color</label>
+            <select id="color" name="color">
+                <option value="#beige" data-original="true">Beige (Original)</option>
+                <option value="#ffffff">White</option>
+                <option value="#ffcc00">Yellow</option>
+                <option value="#ff6666">Red</option>
+                <option value="#e0cda9">Cream</option>
+                <option value="#d1b3c4">Pink</option>
+                <option value="#a3c1ad">Mint</option>
+                <option value="#b0e0e6">Powder Blue</option>
+                <option value="#f5e6e8">Blush</option>
+                <option value="#f7cac9">Rose Quartz</option>
+                <option value="#b39eb5">Lavender</option>
+                <option value="#ffe4b5">Moccasin</option>
+                <option value="#f4a460">Sandy Brown</option>
+                <option value="#deb887">Burly Wood</option>
+                <option value="#c0c0c0">Silver</option>
+                <option value="#000000">Black</option>
+                <option value="#8b4513">Chocolate Brown</option>
+                <option value="#ffd700">Gold</option>
+                <option value="#c0c0c0">Platinum</option>
+                <option value="#800080">Purple</option>
+                <option value="#008000">Green</option>
+                <option value="#00ced1">Turquoise</option>
+                <option value="#ffa07a">Light Salmon</option>
+                <option value="#ffb6c1">Light Pink</option>
+                <option value="#4682b4">Steel Blue</option>
+                <option value="#ffdab9">Peach Puff</option>
+                <option value="#b22222">Firebrick</option>
+                <option value="#e9967a">Dark Salmon</option>
+                <option value="#f0e68c">Khaki</option>
+                <option value="#add8e6">Light Blue</option>
+            </select>
+
+            <label for="size">Size (cm)</label>
+            <select id="size" name="size">
+                <option value="Small" data-size="1">Small (5x5)</option>
+                <option value="Medium" data-size="2">Medium (7x7)</option>
+                <option value="Large" data-size="3">Large (10x10)</option>
+                <option value="XL" data-size="4">XL (15x15)</option>
+                <option value="Mini" data-size="0">Mini (3x3)</option>
+            </select>
+
+            <label for="scent">Scent</label>
+            <select id="scent" name="scent">
+                <optgroup label="Floral Scents">
+                    <option value="Lavender Fields">Lavender Fields</option>
+                    <option value="Rose Petals">Rose Petals</option>
+                    <option value="Jasmine Blossom">Jasmine Blossom</option>
+                    <option value="Gardenia Bloom">Gardenia Bloom</option>
+                    <option value="Honeysuckle Vine">Honeysuckle Vine</option>
+                </optgroup>
+                <optgroup label="Fruity Scents">
+                    <option value="Citrus Zest">Citrus Zest (Orange, Lemon, Lime)</option>
+                    <option value="Wild Berries">Wild Berries</option>
+                    <option value="Mango & Papaya">Mango & Papaya</option>
+                    <option value="Apple Cinnamon">Apple Cinnamon</option>
+                    <option value="Pineapple Coconut">Pineapple Coconut</option>
+                </optgroup>
+                <optgroup label="Sweet & Gourmand Scents">
+                    <option value="Vanilla Bean">Vanilla Bean</option>
+                    <option value="Salted Caramel">Salted Caramel</option>
+                    <option value="Chocolate Fudge">Chocolate Fudge</option>
+                    <option value="Pumpkin Spice">Pumpkin Spice</option>
+                    <option value="Sugar Cookie">Sugar Cookie</option>
+                </optgroup>
+                <optgroup label="Earthy & Woody Scents">
+                    <option value="Sandalwood">Sandalwood</option>
+                    <option value="Cedarwood & Amber">Cedarwood & Amber</option>
+                    <option value="Oakmoss">Oakmoss</option>
+                    <option value="Patchouli Rain">Patchouli Rain</option>
+                    <option value="Forest Pine">Forest Pine</option>
+                </optgroup>
+                <optgroup label="Fresh & Clean Scents">
+                    <option value="Fresh Linen">Fresh Linen</option>
+                    <option value="Ocean Breeze">Ocean Breeze</option>
+                    <option value="Morning Dew">Morning Dew</option>
+                    <option value="Eucalyptus Mint">Eucalyptus Mint</option>
+                    <option value="Cucumber Melon">Cucumber Melon</option>
+                </optgroup>
+                <optgroup label="Spicy & Warm Scents">
+                    <option value="Clove & Nutmeg">Clove & Nutmeg</option>
+                    <option value="Tobacco & Leather">Tobacco & Leather</option>
+                    <option value="Black Pepper & Vetiver">Black Pepper & Vetiver</option>
+                    <option value="Frankincense & Myrrh">Frankincense & Myrrh</option>
+                    <option value="Fireside Smoke">Fireside Smoke</option>
+                </optgroup>
+            </select>
+
+            <label for="text">Custom Text</label>
+            <textarea id="text" name="text" maxlength="100" placeholder="e.g. Happy Birthday!"></textarea>
+
+            <span class="price-label">Price: ₹<span id="price">200</span></span>
+
+            <div class="preview" id="preview">
+                <img id="candlePreview" src="../images/c2.webp" alt="Candle Preview" style="width:120px;height:120px;border-radius:8px;background:#eee;">
+                <div id="previewText" style="margin-top:10px;font-weight:bold;"></div>
+            </div>
+
+            <button type="button" id="saveCustomizationBtn">Save Customization</button>
+        </form>
+    </div>
+    <script>
+        // Color preview
+        document.getElementById('color').addEventListener('change', function() {
+            document.getElementById('candlePreview').style.background = this.value;
+        });
+        // Text preview
+        document.getElementById('text').addEventListener('input', function() {
+            document.getElementById('previewText').textContent = this.value;
+        });
+
+        // Price calculation
+        function updatePrice() {
+            // Color price
+            const colorSelect = document.getElementById('color');
+            const colorIndex = colorSelect.selectedIndex;
+            let price = 0;
+            if (colorIndex === 0) {
+                price = 200; // Original color (Beige)
+            } else {
+                price = 350; // All other colors
+            }
+
+            // Size price (Small=1, Medium=2, Large=3, XL=4, Mini=0)
+            const sizeSelect = document.getElementById('size');
+            const sizeIndex = sizeSelect.selectedIndex;
+            price += sizeIndex * 200;
+
+            // Scent price (all scents 200)
+            price += 200;
+
+            // Custom text price (if any text, add 400)
+            const text = document.getElementById('text').value;
+            if (text.trim().length > 0) price += 400;
+
+            document.getElementById('price').innerText = price;
+        }
+        // Initial price
+        updatePrice();
+
+        // Add to cart on Save Customization
+        document.getElementById('saveCustomizationBtn').addEventListener('click', function() {
+            const color = document.getElementById('color').options[document.getElementById('color').selectedIndex].text;
+            const size = document.getElementById('size').options[document.getElementById('size').selectedIndex].text;
+            const scent = document.getElementById('scent').options[document.getElementById('scent').selectedIndex].text;
+            const text = document.getElementById('text').value;
+            const price = parseInt(document.getElementById('price').innerText, 10);
+            const image = document.getElementById('candlePreview').src;
+
+            let cartKey = 'cart';
+            const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+            if (userInfo && userInfo.email) {
+                cartKey = 'cart_' + userInfo.email;
+            }
+            let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+
+            const existingProduct = cart.find(item =>
+                item.name === `Beige Beauty Candle (${color}, ${size}, ${scent})` &&
+                item.customText === text
+            );
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                cart.push({
+                    name: `Beige Beauty Candle (${color}, ${size}, ${scent})`,
+                    color,
+                    size,
+                    scent,
+                    customText: text,
+                    price,
+                    image,
+                    quantity: 1
+                });
+            }
+            localStorage.setItem(cartKey, JSON.stringify(cart));
+            alert('Customization saved and added to cart!');
+        });
+    </script>
+</body>
+</html>

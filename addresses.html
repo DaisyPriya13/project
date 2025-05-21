@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Addresses | The Chosen Lamb</title>
+  <link rel="stylesheet" href="../css/account.css">
+  <script src="../js/addresses.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="../images/logo.webp" alt="Logo" class="logo-img">
+      <span class="brand-name">The Chosen Lamb</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="acc.html" class="acc-link">Account</a></li>
+      <li><a href="cart.html" class="cart-link">Cart</a></li>
+      <li><a href="login.html" class="login-link">Login</a></li>
+    </ul>
+  </nav>
+
+  <div class="account-container">
+    <div class="main-content">
+      <h2>Manage Addresses</h2>
+      <div id="address-list">
+        <!-- Existing addresses will be dynamically loaded here -->
+      </div>
+      <button id="add-address-btn">Add New Address</button>
+
+      <!-- Address Form Section -->
+      <div id="address-form-container" class="address-form-container" style="display: none;">
+        <h3>Add or Update Address</h3>
+        <form id="address-form">
+          <label for="street">Street:</label>
+          <input type="text" id="street" name="street" required>
+
+          <label for="apartment">Apartment Number:</label>
+          <input type="text" id="apartment" name="apartment">
+
+          <label for="landmark">Landmark:</label>
+          <input type="text" id="landmark" name="landmark">
+
+          <label for="post">Post:</label>
+          <input type="text" id="post" name="post">
+
+          <label for="locality">Locality:</label>
+          <input type="text" id="locality" name="locality" required>
+
+          <label for="city">City:</label>
+          <input type="text" id="city" name="city" required>
+
+          <label for="pincode">Pincode:</label>
+          <input type="text" id="pincode" name="pincode" required>
+
+          <label for="state">State:</label>
+          <input type="text" id="state" name="state" required>
+
+          <label for="country">Country:</label>
+          <input type="text" id="country" name="country" value="India" readonly>
+
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required>
+
+          <button type="submit">Save Address</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <!-- ...existing code... -->
+  </footer>
+</body>
+</html>

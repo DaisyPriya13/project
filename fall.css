@@ -1,0 +1,245 @@
+body {
+  font-family: Arial, sans-serif; /* Match home page font */
+  margin: 0;
+  background-color: #f9f9f9; /* Match home page background */
+  color: #333;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff; /* Set header background to white */
+  padding: 10px 20px;
+  color: #333; /* Adjust text color for contrast */
+}
+
+/* Collection Section */
+.collection-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.collection-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #400; /* Match home page section title color */
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 products per row */
+  gap: 20px; /* Space between cards */
+  margin: 20px 0; /* Add spacing around the grid */
+}
+
+.product-card {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px; /* Slightly larger border radius */
+  padding: 20px; /* Increase padding for larger cards */
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  max-height: 250px; /* Increase image height */
+  object-fit: cover; /* Crop images if necessary */
+  margin-bottom: 15px; /* Add more spacing below image */
+}
+
+.product-card h3 {
+  font-size: 18px; /* Increase font size for titles */
+  margin: 15px 0;
+}
+
+.product-card .price {
+  font-size: 16px; /* Slightly larger price font */
+  color: #333;
+}
+
+.product-card:hover {
+  transform: scale(1.05); /* Add hover effect */
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+  background-color: #400; /* Match home page button color */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 50px; /* Match home page rounded button */
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #218838; /* Match home page hover color */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff; /* Set header background to white */
+  padding: 10px 20px;
+  color: #333; /* Adjust text color for contrast */
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+.logo-img {
+  height: 40px; /* Adjust logo height */
+  margin-right: 10px; /* Add spacing between logo and text */
+}
+
+.brand-name {
+  font-family: 'Brush Script MT', cursive; /* Cursive font */
+  font-size: 1.5rem; /* Adjust font size */
+  color: #b66a3c; /* Brand color */
+  margin: 0;
+}
+
+.search-bar {
+  width: 40%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  background: #eee;
+}
+
+.categories a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Brand Name Styling */
+.logo {
+  display: flex;
+  align-items: center; /* Align logo and brand name vertically */
+  gap: 0.5rem; /* Add spacing between the logo and brand name */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333; /* Adjust link color for visibility */
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline; /* Add underline on hover */
+}
+
+.add-to-cart-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #400;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #218838;
+}
+footer {
+  background-color: #f1ebe5;
+  color: #333;
+  padding: 2rem 1.5rem 0.5rem;
+  font-size: 0.85rem;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: #f1ebe5; /* Keep the existing background color */
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.footer-section:first-child {
+  text-align: left; /* Align "Contact Us" to the left */
+}
+
+.footer-section:nth-child(2) {
+  text-align: center; /* Align "Quick Links" to the center */
+}
+
+.footer-section:last-child {
+  text-align: right; /* Align "Follow Us" to the right */
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+}
+
+.footer-section a {
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.85rem;
+}
+
+.footer-section a:hover {
+  color: #b66a3c;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.4rem;
+}
+
+.social-icons a {
+  margin-right: 0.8rem;
+  font-size: 1.3rem;
+  color: #b66a3c;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff9e67;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px;
+  background-color: #e0e0e0;
+  margin-top: 20px;
+}

@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #fafafa;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-img {
+    height: 5px;
+}
+
+.brand-name {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 1.5rem;
+    color: #b66a3c;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    color: #b66a3c;
+}
+
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    background: #eee;
+}
+
+.categories a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.categories a:hover {
+    color: #b66a3c;
+}
+
+.hero {
+    background-image: url('../images/hero-candle.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.our-story-content {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.story-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.story-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.story-img {
+    width: 45%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.story-text {
+    width: 50%;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #f1ebe5;
+    color: #333;
+    padding: 2rem 1.5rem 0.5rem;
+    font-size: 0.85rem;
+    border-top: 1px solid #ddd;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #444;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.footer-section a:hover {
+    color: #b66a3c;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    background-color: #e0e0e0;
+    margin-top: 20px;
+}

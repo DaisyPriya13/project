@@ -1,0 +1,222 @@
+.account-container {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #f1ebe5;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.profile-section {
+  margin-bottom: 20px;
+}
+
+#profile-picture {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-details {
+  margin-left: 0; /* Remove left margin in sidebar */
+}
+
+.profile-details h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.profile-details p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: #b66a3c;
+  color: white;
+}
+
+.main-content {
+  flex: 3;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info-section, .address-section {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+form input, form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #400;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #600;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff; /* Set header background to white */
+  padding: 10px 20px;
+  color: #333; /* Adjust text color for contrast */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Add spacing between the logo and brand name */
+}
+
+.logo-img {
+  height: 25px; /* Ensure consistent logo size */
+  width: auto;
+}
+
+.brand-name {
+  font-family: 'Brush Script MT', cursive; /* Cursive font */
+  font-size: 1.5rem; /* Adjust font size */
+  color: #b66a3c; /* Brand color */
+  margin: 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none; /* Remove underline from links */
+  color: #333;
+}
+
+.nav-links a:hover {
+  color: #b66a3c; /* Add hover effect for links */
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  background: #eee;
+}
+
+.categories a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+footer {
+  background-color: #f1ebe5; /* Match the footer background from home.css */
+  color: #333;
+  padding: 2rem 1.5rem 0.5rem;
+  font-size: 0.85rem;
+  border-top: 1px solid #ddd;
+}
+
+.footer-section a {
+  text-decoration: none; /* Remove underline from footer links */
+  color: #444;
+}
+
+.footer-section a:hover {
+  color: #b66a3c; /* Add hover effect for footer links */
+}
+
+.address-form-container {
+  margin: 20px auto;
+  max-width: 600px;
+  background-color: #f1ebe5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.address-form-container h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#address-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+#address-form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#address-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #400;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#address-form button:hover {
+  background-color: #600;
+}

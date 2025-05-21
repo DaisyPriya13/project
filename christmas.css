@@ -1,0 +1,133 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #400;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo-img {
+    height: 40px;
+  }
+  
+  .brand-name {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 1.8rem;
+    color: #fff;
+  }
+  
+  .search-bar {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Section Title */
+  .section-title {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+    color: #400;
+  }.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 products per row */
+    gap: 20px; /* Space between cards */
+    margin: 20px 0; /* Add spacing around the grid */
+  }
+  
+  .product-card {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Slightly larger border radius */
+    padding: 20px; /* Increase padding for larger cards */
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+    max-height: 250px; /* Increase image height */
+    object-fit: cover; /* Crop images if necessary */
+    margin-bottom: 15px; /* Add more spacing below image */
+  }
+  
+  .product-card h3 {
+    font-size: 18px; /* Increase font size for titles */
+    margin: 15px 0;
+  }
+  
+  .product-card .price {
+    font-size: 16px; /* Slightly larger price font */
+    color: #333;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05); /* Add hover effect */
+  }
+  /* Footer */
+  footer {
+    background-color: #400;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .footer-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }

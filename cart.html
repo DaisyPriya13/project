@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Candle Store</title>
+  <link rel="stylesheet" href="../css/cart.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    /* Header styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #f8f9fa;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar .logo-img {
+      width: 50px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    .navbar .brand-name {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .navbar .search-bar {
+      flex: 1;
+      margin: 0 20px;
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .navbar .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar .nav-links li {
+      display: inline;
+    }
+
+    .navbar .nav-links a {
+      text-decoration: none;
+      color: #007bff;
+      font-weight: 500;
+    }
+
+    .navbar .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .categories {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 10px 0;
+      background-color: #f1f1f1;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .categories a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .categories a:hover {
+      color: #007bff;
+    }
+
+    #cart-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    #cart-items {
+        width: 70%;
+    }
+    #price-details {
+        width: 25%;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .cart-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        gap: 15px; /* Add spacing between image and details */
+    }
+    .cart-item img {
+        width: 80px; /* Reduced width */
+        height: auto;
+        border-radius: 5px;
+    }
+    .cart-item div {
+        flex: 1;
+    }
+    .cart-item p {
+        margin: 5px 0;
+    }
+    .cart-item button {
+        margin-top: 10px;
+        color: white; /* Text color */
+        background-color: #400; /* Background color */
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer;
+    }
+
+    .cart-item button:hover {
+        background-color: #300; /* Darker shade on hover */
+    }
+    #checkout-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #checkout-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="../images/logo.webp" alt="Logo" class="logo-img">
+      <span class="brand-name">The Chosen Lamb</span>
+    </div>
+    <input type="text" placeholder="Search" class="search-bar">
+    <ul class="nav-links">
+      <li><a href="acc.html" class="acc-link">Account</a></li>
+      <li><a href="cart.html" class="cart-link">Cart</a></li>
+      <li><a href="login.html" class="login-link">Login</a></li>
+    </ul>
+  </nav>
+
+  <!-- Category Menu -->
+  <div class="categories">
+    <a href="../html/home.html">Home</a>
+    <a href="../html/christmas.html">Christmas Candles</a>
+    <a href="../html/fall.html">Fall Candles</a>
+    <a href="../html/dessert.html">Dessert Candles</a>
+    <a href="../html/vegan.html">Vegan Soy Candles</a>
+    <a href="../html/ourStory.html">Our Story</a> <!-- Added Our Story -->
+  </div>
+
+  <header>
+    <h1>Your Cart</h1>
+    <div id="cart-user-info" style="margin-bottom:10px;color:#333;font-weight:bold;"></div>
+  </header>
+  <main>
+    <div id="cart-container">
+        <div id="cart-items"></div>
+        <div id="price-details">
+            <h2>Price Details</h2>
+            <p id="total-items">Total Items: 0</p>
+            <p id="total-price">Total Price: ₹0</p>
+            <a id="checkout-button" href="../html/checkout.html">Proceed to Checkout</a>
+        </div>
+    </div>
+    <div id="purchase-history">
+        <h2>Purchase History</h2>
+        <div id="history-items"></div>
+    </div>
+</main>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get logged-in user info
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        const cartUserInfoDiv = document.getElementById('cart-user-info');
+        let cartKey = 'cart';
+        if (userInfo && userInfo.email) {
+            cartUserInfoDiv.textContent = `Logged in as: ${userInfo.name || ''} (${userInfo.email})`;
+            cartKey = 'cart_' + userInfo.email;
+        } else {
+            cartUserInfoDiv.textContent = 'You are not logged in.';
+        }
+
+        // Disable checkout button if not logged in
+        const checkoutButton = document.getElementById('checkout-button');
+        if (localStorage.getItem('isLoggedIn') !== 'true') {
+            checkoutButton.classList.add('disabled');
+            checkoutButton.style.pointerEvents = 'none';
+            checkoutButton.style.opacity = '0.5';
+            checkoutButton.title = 'Please log in to proceed to checkout';
+        }
+
+        const cartItemsDiv = document.getElementById('cart-items');
+        const totalItemsElem = document.getElementById('total-items');
+        const totalPriceElem = document.getElementById('total-price');
+        let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+
+        const updatePriceDetails = () => {
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            totalItemsElem.textContent = `Total Items: ${totalItems}`;
+            totalPriceElem.textContent = `Total Price: ₹${totalPrice.toFixed(2)}`;
+
+            // Disable checkout button if cart is empty or not logged in
+            if (cart.length === 0 || localStorage.getItem('isLoggedIn') !== 'true') {
+                checkoutButton.classList.add('disabled');
+                checkoutButton.style.pointerEvents = 'none';
+                checkoutButton.style.opacity = '0.5';
+            } else {
+                checkoutButton.classList.remove('disabled');
+                checkoutButton.style.pointerEvents = 'auto';
+                checkoutButton.style.opacity = '1';
+            }
+        };
+
+        const renderCart = () => {
+            cartItemsDiv.innerHTML = '';
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
+                updatePriceDetails();
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                itemDiv.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div>
+                        <p><strong>Name:</strong> ${item.name}</p>
+                        ${item.scent ? `<p><strong>Scent:</strong> ${item.scent}</p>` : ''}
+                        ${
+                            (item.customText1 || item.customText2)
+                            ? `<p><strong>Custom Text:</strong> ${item.customText1 ? item.customText1 : ''}${item.customText1 && item.customText2 ? ' | ' : ''}${item.customText2 ? item.customText2 : ''}</p>`
+                            : (typeof item.customText === 'string' && item.customText.trim() !== '' ? `<p><strong>Custom Text:</strong> ${item.customText}</p>` : '')
+                        }
+                        <p><strong>Price:</strong> ₹${(item.price * item.quantity).toFixed(2)}</p>
+                        <p><strong>Quantity:</strong> 
+                            <button class="decrease-quantity" data-index="${index}">-</button>
+                            ${item.quantity}
+                            <button class="increase-quantity" data-index="${index}">+</button>
+                        </p>
+                        <button class="remove-item" data-index="${index}">Remove</button>
+                        <button class="buy-item" data-index="${index}">Buy</button>
+                    </div>
+                `;
+                cartItemsDiv.appendChild(itemDiv);
+            });
+
+            updatePriceDetails();
+        };
+
+        cartItemsDiv.addEventListener('click', (event) => {
+            const index = event.target.dataset.index;
+            if (event.target.classList.contains('remove-item')) {
+                cart.splice(index, 1);
+            } else if (event.target.classList.contains('increase-quantity')) {
+                cart[index].quantity += 1;
+            } else if (event.target.classList.contains('decrease-quantity')) {
+                if (cart[index].quantity > 1) {
+                    cart[index].quantity -= 1;
+                }
+            } else if (event.target.classList.contains('buy-item')) {
+                const selectedProduct = { ...cart[index] };
+                if (userInfo && userInfo.email) {
+                    selectedProduct.userEmail = userInfo.email;
+                }
+                localStorage.setItem('singleProduct', JSON.stringify(selectedProduct));
+                // Remove the product from the cart after ordering
+                cart.splice(index, 1);
+                localStorage.setItem(cartKey, JSON.stringify(cart));
+                renderCart();
+                window.location.href = '../html/checkout.html';
+                return;
+            }
+            localStorage.setItem(cartKey, JSON.stringify(cart));
+            renderCart();
+        });
+
+        // Ensure all prices are numbers and quantities are valid
+        cart = cart.map(item => ({
+            ...item,
+            quantity: item.quantity || 1,
+            price: parseFloat(item.price) || 0
+        }));
+        renderCart();
+
+        const historyItemsDiv = document.getElementById('history-items');
+        let purchaseHistory = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
+
+        // Filter purchase history by logged-in user
+        if (userInfo && userInfo.email) {
+            purchaseHistory = purchaseHistory.filter(item => item.userEmail === userInfo.email);
+        }
+
+        const renderPurchaseHistory = () => {
+            historyItemsDiv.innerHTML = '';
+            if (purchaseHistory.length === 0) {
+                historyItemsDiv.innerHTML = '<p>No purchase history available.</p>';
+                return;
+            }
+
+            purchaseHistory.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+                itemDiv.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div>
+                        <p><strong>Name:</strong> ${item.name}</p>
+                        ${item.scent ? `<p><strong>Scent:</strong> ${item.scent}</p>` : ''}
+                        <p><strong>Price:</strong> ₹${(item.price * item.quantity).toFixed(2)}</p>
+                        <p><strong>Quantity:</strong> ${item.quantity}</p>
+                    </div>
+                `;
+                historyItemsDiv.appendChild(itemDiv);
+            });
+        };
+
+        renderPurchaseHistory();
+    });
+
+    // Hide Login link if user is logged in
+    document.addEventListener('DOMContentLoaded', function() {
+      if (localStorage.getItem('isLoggedIn') === 'true') {
+        var loginLink = document.querySelector('.login-link');
+        if (loginLink) loginLink.style.display = 'none';
+      }
+    });
+</script>
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Contact Us</h3>
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:thechosenlamb@gmail.com">thechosenlamb@gmail.com</a></p>
+            <p><i class="fas fa-phone"></i> Phone: <a href="tel:+918105476094">+91 8105476094</a></p>
+            <p><i class="fas fa-map-marker-alt"></i> Address: #123 Maple Meadows, Kalyan Nagar, Bangalore, India</p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="fq.html">FAQs</a></li>
+                <li><a href="delivery.html">Delivery and Returns</a></li>
+                <li><a href="terms.html">Terms and Conditions</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/yourinstagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/yourfacebook" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/918105476094" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 The Chosen Lamb.</p>
+    </div>
+</footer>
+</body>
+</html>

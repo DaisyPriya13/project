@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout</title>
+  <link rel="stylesheet" href="../css/checkout.css"/>
+  <style>
+    .payment-icons img {
+      width: 50px;
+      height: auto;
+      margin-right: 10px;
+    }
+    .payment-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .payment-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    .payment-option img {
+      width: 40px;
+      height: auto;
+    }
+    .payment-option span {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .payment-option:hover {
+      background-color: #f0f8ff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    input[type="radio"] {
+      display: none;
+    }
+    input[type="radio"]:checked + .payment-option {
+      border-color: #007bff;
+      background-color: #e6f7ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="checkout-container">
+    <!-- Left: Contact & Shipping -->
+    <div class="checkout-form">
+      <h2>Contact Information</h2>
+      <input type="email" placeholder="Email *" required/>
+      <input type="tel" placeholder="Phone Number *" required/>
+
+      <h2>Shipping Address</h2>
+      <input type="text" placeholder="Full Name *" required/>
+      <input type="text" placeholder="Street Address *" required/>
+      <div class="address-row">
+        <input type="text" placeholder="City *" required/>
+        <input type="text" placeholder="State/Province *" required/>
+        <input type="text" placeholder="Zip/Postal Code *" required/>
+      </div>
+      <input type="text" placeholder="Country *" value="India" disabled/>
+
+      <h2>Payment Info</h2>
+      <div class="payment-options">
+        <label>
+          <input type="radio" name="payment-method" value="credit-card" required/>
+          <div class="payment-option">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Credit Card">
+            <span>Credit Card</span>
+          </div>
+        </label>
+        <label>
+          <input type="radio" name="payment-method" value="debit-card" required/>
+          <div class="payment-option">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Debit Card">
+            <span>Debit Card</span>
+          </div>
+        </label>
+        <label>
+          <input type="radio" name="payment-method" value="cod" required/>
+          <div class="payment-option">
+            <span>Cash on Delivery</span>
+          </div>
+        </label>
+        <label>
+          <input type="radio" name="payment-method" value="upi" required/>
+          <div class="payment-option">
+            <span>UPI</span>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- Right: Order Summary -->
+    <div class="checkout-summary">
+      <div id="cart-items"></div>
+      <div class="summary">
+        <p>Subtotal: ₹<span id="subtotal">0.00</span></p>
+        <h3>Total: ₹<span id="total">0.00</span></h3>
+        <button class="place-order">Place Order</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cartItemsDiv = document.getElementById('cart-items');
+      const subtotalElem = document.getElementById('subtotal');
+      const totalElem = document.getElementById('total');
+      const placeOrderButton = document.querySelector('.place-order');
+
+      // Use user-specific cart key
+      let cartKey = 'cart';
+      const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+      if (userInfo && userInfo.email) {
+        cartKey = 'cart_' + userInfo.email;
+      }
+      const cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+
+      const renderCartItems = () => {
+        cartItemsDiv.innerHTML = '';
+        let subtotal = 0;
+
+        if (cart.length === 0) {
+          cartItemsDiv.innerHTML = '<p>Your cart is empty.</p>';
+          subtotalElem.textContent = '0.00';
+          totalElem.textContent = '0.00';
+          return;
+        }
+
+        cart.forEach(item => {
+          const itemDiv = document.createElement('div');
+          itemDiv.classList.add('cart-item');
+          itemDiv.innerHTML = `
+            <img src="${item.image}" alt="${item.name}">
+            <div>
+              <p>${item.name}</p>
+              <p>₹${(parseFloat(item.price) * (item.quantity || 1)).toFixed(2)}</p>
+            </div>
+          `;
+          cartItemsDiv.appendChild(itemDiv);
+          subtotal += parseFloat(item.price) * (item.quantity || 1);
+        });
+
+        subtotalElem.textContent = subtotal.toFixed(2);
+        totalElem.textContent = subtotal.toFixed(2);
+      };
+
+      const placeOrder = async () => {
+        const email = document.querySelector('input[placeholder="Email *"]').value;
+        const phone = document.querySelector('input[placeholder="Phone Number *"]').value;
+        const name = document.querySelector('input[placeholder="Full Name *"]').value;
+        const address = document.querySelector('input[placeholder="Street Address *"]').value;
+        const city = document.querySelector('input[placeholder="City *"]').value;
+        const state = document.querySelector('input[placeholder="State/Province *"]').value;
+        const zip = document.querySelector('input[placeholder="Zip/Postal Code *"]').value;
+        const paymentMethod = document.querySelector('input[name="payment-method"]:checked')?.value;
+
+        if (!email || !phone || !name || !address || !city || !state || !zip || !paymentMethod) {
+          alert('Please fill in all required fields.');
+          return;
+        }
+
+        const orderData = {
+          user_name: name,
+          phone_number: phone,
+          email: email,
+          address: `${address}, ${city}, ${state}, ${zip}, India`,
+          // Ensure customText/customText1/customText2 are included for each product if present
+          products: cart.map(item => {
+            const product = {
+              name: item.name,
+              price: item.price,
+              quantity: item.quantity,
+              image: item.image,
+              scent: item.scent,
+              color: item.color,
+              size: item.size,
+              // ...other fields...
+            };
+            if (typeof item.customText === 'string' && item.customText.trim() !== '') {
+              product.customText = item.customText;
+            }
+            if (typeof item.customText1 === 'string' && item.customText1.trim() !== '') {
+              product.customText1 = item.customText1;
+            }
+            if (typeof item.customText2 === 'string' && item.customText2.trim() !== '') {
+              product.customText2 = item.customText2;
+            }
+            return product;
+          }),
+          total_price: parseFloat(totalElem.textContent),
+          payment_mode: paymentMethod,
+          order_date: new Date().toISOString()
+        };
+
+        try {
+          // Save order details to orders.json using PHP script
+          const updateResponse = await fetch('../php/update_orders.php', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(orderData),
+          });
+
+          if (updateResponse.ok) {
+              // Save transaction to database
+              await fetch('../php/transaction.php', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({
+                      user_name: name,
+                      email: email,
+                      payment_mode: paymentMethod
+                  })
+              });
+              localStorage.removeItem(cartKey); // Clear the user-specific cart
+              // Show order confirmation popup with order details
+              const confirmedOrder = orderData;
+              showOrderConfirmation(confirmedOrder);
+          } else {
+              alert('Failed to place order. Please try again.');
+          }
+        } catch (error) {
+          console.error('Error placing order:', error);
+          alert('An error occurred. Please try again.');
+        }
+      };
+
+      function showOrderConfirmation(order) {
+        // Create popup
+        const popup = document.createElement('div');
+        popup.style.position = 'fixed';
+        popup.style.top = '0';
+        popup.style.left = '0';
+        popup.style.width = '100vw';
+        popup.style.height = '100vh';
+        popup.style.background = 'rgba(0,0,0,0.5)';
+        popup.style.display = 'flex';
+        popup.style.alignItems = 'center';
+        popup.style.justifyContent = 'center';
+        popup.style.zIndex = '9999';
+
+        const details = `
+          <div style="background:#fff;padding:30px 40px;border-radius:10px;max-width:400px;text-align:center;">
+            <h2 style="color:green;">Order Confirmed!</h2>
+            <p><strong>Name:</strong> ${order.user_name}</p>
+            <p><strong>Email:</strong> ${order.email}</p>
+            <p><strong>Phone:</strong> ${order.phone_number}</p>
+            <p><strong>Address:</strong> ${order.address}</p>
+            <p><strong>Total:</strong> ₹${order.total_price.toFixed(2)}</p>
+            <p><strong>Payment:</strong> ${order.payment_mode}</p>
+            <button id="close-popup" style="margin-top:15px;padding:8px 20px;background:#007bff;color:#fff;border:none;border-radius:5px;cursor:pointer;">OK</button>
+          </div>
+        `;
+        popup.innerHTML = details;
+        document.body.appendChild(popup);
+
+        document.getElementById('close-popup').onclick = function() {
+          popup.remove();
+          window.location.href = '../html/home.html';
+        };
+      }
+
+      placeOrderButton.addEventListener('click', placeOrder);
+      renderCartItems();
+    });
+  </script>
+
+  <div class="navbar">
+    <div class="logo">
+      <a href="../html/home.html"><img src="../images/logo.png" alt="Logo"></a>
+    </div>
+    <div class="categories">
+      <a href="../html/home.html">Home</a>
+      <a href="../html/christmas.html">Christmas Candles</a>
+      <a href="../html/fall.html">Fall Candles</a>
+      <a href="../html/dessert.html">Dessert Candles</a>
+      <a href="../html/vegan.html">Vegan Soy Candles</a>
+      <a href="../html/ourStory.html">Our Story</a> <!-- Added Our Story -->
+    </div>
+    <div class="user-options">
+      <a href="../html/cart.html">Cart</a>
+      <a href="../html/login.html">Login</a>
+    </div>
+  </div>
+</body>
+</html>

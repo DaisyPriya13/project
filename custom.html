@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Candles</title>
+    <link rel="stylesheet" href="../css/custom.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Ensure custom.css is loaded last for highest priority */
+        @import url('../css/custom.css');
+    </style>
+</head>
+<body>
+    <!-- Navbar/Header -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../images/logo.webp" alt="Logo" class="logo-img">
+            <span class="brand-name">The Chosen Lamb</span>
+        </div>
+        <input type="text" placeholder="Search" class="search-bar">
+        <ul class="nav-links">
+            <li><a href="acc.html" class="acc-link">Account</a></li>
+            <li><a href="custom.html" class="custom-link">Customise</a></li>
+            <li><a href="cart.html" class="cart-link">Cart</a></li>
+            <li><a href="login.html" class="login-link">Login</a></li>
+        </ul>
+    </nav>
+    <!-- Category Menu -->
+    <div class="categories">
+        <a href="../html/home.html">Home</a>
+        <a href="../html/christmas.html">Christmas Candles</a>
+        <a href="../html/fall.html">Fall Candles</a>
+        <a href="../html/dessert.html">Dessert Candles</a>
+        <a href="../html/vegan.html">Vegan Soy Candles</a>
+        <a href="../html/custom.html">Customise</a>
+        <a href="../html/ourStory.html">Our Story</a>
+    </div>
+    <h1>Custom Candles</h1>
+    <div id="example-products">
+        <div class="product-card" onclick="window.location.href='custom-product1.html'">
+            <img src="../images/c1.avif" alt="Custom Candle 1">
+            <h3>Custom Text Candle</h3>
+        </div>
+        <div class="product-card" onclick="window.location.href='custom-product2.html'">
+            <img src="../images/c2.webp" alt="Custom Candle 2">
+            <h3>Beige Beauty Candle</h3>
+        </div>
+        <div class="product-card" onclick="window.location.href='custom-product3.html'">
+            <img src="../images/c3.webp" alt="Custom Candle 3">
+            <h3>Thank You Candles</h3>
+        </div>
+        <div class="product-card" onclick="window.location.href='custom-product4.html'">
+            <img src="../images/c4.webp" alt="Custom Candle 4">
+            <h3>Wedding Theme Candles</h3>
+        </div>
+        <div class="product-card" onclick="window.location.href='custom-product5.html'">
+            <img src="../images/c5.webp" alt="Custom Candle 5">
+            <h3>Anniversary Candle</h3>
+        </div>
+        <div class="product-card" onclick="window.location.href='custom-product6.html'">
+            <img src="../images/c6.webp" alt="Custom Candle 6">
+            <h3>Gift Basket Candles</h3>
+        </div>
+        <div class="product-card" onclick="window.location.href='custom-product7.html'">
+            <img src="../images/c7.webp" alt="Custom Candle 7">
+            <h3>Couple Candles</h3>
+        </div>
+        <div class="product-card" onclick="window.location.href='custom-product8.html'">
+            <img src="../images/c8.webp" alt="Custom Candle 8">
+            <h3>Custom Message Candle</h3>
+        </div>
+        <div class="product-card" onclick="window.location.href='custom-product9.html'">
+            <img src="../images/c9.webp" alt="Custom Candle 9">
+            <h3>Corquette Gurly Candles</h3>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:thechosenlamb@gmail.com">thechosenlamb@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> Phone: <a href="tel:+918105476094">+91 8105476094</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Address: #123 Maple Meadows, Kalyan Nagar, Bangalore, India</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="fq.html">FAQs</a></li>
+                    <li><a href="delivery.html">Delivery and Returns</a></li>
+                    <li><a href="terms.html">Terms and Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/yourinstagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/yourfacebook" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://wa.me/918105476094" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 The Chosen Lamb.</p>
+        </div>
+    </footer>
+    <script>
+    document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+        button.addEventListener('click', event => {
+            const productCard = event.target.closest('.product-card');
+            const product = {
+                image: productCard.querySelector('img').src,
+                name: productCard.querySelector('h3').textContent,
+                price: parseFloat(productCard.querySelector('.price').textContent.replace('₹', '').trim()),
+            };
+            let cartKey = 'cart';
+            const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+            if (userInfo && userInfo.email) {
+                cartKey = 'cart_' + userInfo.email;
+            }
+            const cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+            const existingProduct = cart.find(item => item.name === product.name);
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                product.quantity = 1;
+                cart.push(product);
+            }
+            localStorage.setItem(cartKey, JSON.stringify(cart));
+            alert(`${product.name} has been added to your cart!`);
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        if (localStorage.getItem('isLoggedIn') === 'true') {
+            var loginLink = document.querySelector('.login-link');
+            if (loginLink) loginLink.style.display = 'none';
+        }
+    });
+    </script>
+</body>
+</html>

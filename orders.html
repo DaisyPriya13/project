@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders</title>
+    <link rel="stylesheet" href="../css/orders.css">
+    <style>
+        .product-image {
+            width: 80px; /* Reduced width */
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../images/logo.webp" alt="Logo" class="logo-img">
+            <span class="brand-name">The Chosen Lamb</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="checkout.html">Checkout</a></li>
+        </ul>
+    </nav>
+
+    <h2 class="orders-title">My Orders</h2>
+    <div id="orders-container"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>© 2025 The Chosen Lamb.</p>
+        </div>
+    </footer>
+
+    <script src="../js/orders.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const ordersContainer = document.getElementById('orders-container');
+
+            try {
+                const response = await fetch('../json/orders.json');
+                const orders = await response.json();
+
+                if (orders.length === 0) {
+                    ordersContainer.innerHTML = '<p>No orders found.</p>';
+                    return;
+                }
+
+                orders.forEach(order => {
+                    const orderDiv = document.createElement('div');
+                    orderDiv.classList.add('order');
+
+                    const productsHTML = order.products.map(product => `
+                        <div class="product">
+                            <img src="${product.image}" alt="${product.name}" class="product-image">
+                            <div>
+                                <p><strong>Name:</strong> ${product.name}</p>
+                                <p><strong>Price:</strong> ₹${(product.price * product.quantity).toFixed(2)}</p>
+                                <p><strong>Quantity:</strong> ${product.quantity}</p>
+                            </div>
+                        </div>
+                    `).join('');
+
+                    orderDiv.innerHTML = `
+                        <h3>Order Details</h3>
+                        <p><strong>Name:</strong> ${order.user_name}</p>
+                        <p><strong>Phone:</strong> ${order.phone_number}</p>
+                        <p><strong>Email:</strong> ${order.email}</p>
+                        <p><strong>Address:</strong> ${order.address}</p>
+                        <p><strong>Payment Mode:</strong> ${order.payment_mode}</p>
+                        <p><strong>Total Price:</strong> ₹${order.total_price.toFixed(2)}</p>
+                        <p><strong>Order Date:</strong> ${new Date(order.order_date).toLocaleString()}</p>
+                        <h4>Products:</h4>
+                        <div class="products">${productsHTML}</div>
+                    `;
+
+                    ordersContainer.appendChild(orderDiv);
+                });
+            } catch (error) {
+                console.error('Error fetching orders:', error);
+                ordersContainer.innerHTML = '<p>Failed to load orders. Please try again later.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

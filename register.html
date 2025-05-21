@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In | The Chosen Lamb</title>
+  <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+  <div class="container">
+    <div class="signin-box">
+      <div class="signin-image"></div>
+      <div class="signin-form">
+        <h1 class="brand-name">The Chosen Lamb</h1> <!-- Brand name in cursive -->
+        <h2>Sign In</h2>
+        <form id="signin-form" action="../php/backend.php" method="POST">
+          <div class="form-group">
+            <label for="username">Username <span class="required-star">*</span></label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="required-star">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password <span class="required-star">*</span></label>
+            <input type="password" id="password" name="password" placeholder="Create a password" required>
+          </div>
+          <input type="submit" value="Sign In" class="submit-btn">
+        </form>
+        <div class="login-link">
+          Already have an account? <a href="login.html">Log In</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
